@@ -1,10 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Prueba</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salud y Obesidad</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .medical-bg {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            min-height: 100vh;
+        }
+        .nav-button {
+            transition: all 0.3s ease;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 0.5rem;
+        }
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .highlight-card {
+            border: none;
+            border-radius: 20px;
+            background: white;
+            padding: 2rem;
+            margin: 1rem 0;
+        }
+    </style>
 </head>
-<body>
-    <h1>¡Página funciona!</h1>
-    <p>Si ves esto, Bootstrap era el problema.</p>
+<body class="medical-bg">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
+        <div class="container">
+            <a class="navbar-brand" href="#">Salud Integral</a>
+            <div class="navbar-nav">
+                <a class="btn nav-button btn-success" href="{% url 'crud:home' %}">Inicio</a>
+                <a class="btn nav-button btn-info" href="{% url 'crud:causes' %}">Causas</a>
+                <a class="btn nav-button btn-warning" href="{% url 'crud:prevention' %}">Prevención</a>
+                <a class="btn nav-button btn-danger" href="{% url 'crud:statistics' %}">Estadísticas</a>
+                <a class="btn nav-button btn-dark" href="{% url 'crud:tips' %}">Consejos Prácticos</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="highlight-card">
+            <h1 class="text-center mb-4">¡Combate la Obesidad!</h1>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Calcula tu IMC</h5>
+                            <p class="card-text">Mantén un control regular de tu índice de masa corporal</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Plan de Alimentación</h5>
+                            <p class="card-text">Descarga guías nutricionales personalizadas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Rutinas de Ejercicio</h5>
+                            <p class="card-text">Accede a videos y planes de entrenamiento</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
