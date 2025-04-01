@@ -1,24 +1,37 @@
 {% extends 'obesity_home.html' %}
+{% load static %}
 
 {% block content %}
-<div class="container mt-5">
-    <div class="highlight-card">
-        <h2>Medidas Preventivas</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5>Alimentación Balanceada</h5>
-                        <p>Incluye frutas, verduras y proteínas magras</p>
-                    </div>
+<div class="highlight-card">
+    <h2 class="text-success mb-4"><i class="fas fa-shield-alt me-3"></i>Medidas Preventivas</h2>
+    
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+            <div class="card h-100 border-success">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="fas fa-apple-alt me-2 text-success"></i>Nutrición
+                    </h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">5 porciones diarias de frutas/verduras</li>
+                        <li class="list-group-item">Limitar grasas saturadas</li>
+                        <li class="list-group-item">Control de porciones</li>
+                    </ul>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5>Ejercicio Regular</h5>
-                        <p>Mínimo 150 minutos semanales de actividad</p>
-                    </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 border-success">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="fas fa-running me-2 text-success"></i>Ejercicio
+                    </h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">150 minutos semanales de actividad</li>
+                        <li class="list-group-item">Ejercicios de fuerza 2x/semana</li>
+                        <li class="list-group-item">Evitar estar sentado >1 hora</li>
+                    </ul>
                 </div>
             </div>
         </div>
