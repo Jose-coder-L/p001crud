@@ -27,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['18.229.139.174', 'localhost','kilosmortales.duckdns.org']
 
-
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True  # Solo si estás detrás de proxy
 # Application definition
 
 INSTALLED_APPS = [
