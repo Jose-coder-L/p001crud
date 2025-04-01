@@ -1,15 +1,40 @@
 {% extends 'obesity_home.html' %}
+{% load static %}
 
 {% block content %}
-<div class="container mt-5">
-    <div class="highlight-card">
-        <h2>Causas Principales</h2>
-        <ul class="list-group">
-            <li class="list-group-item">Dieta alta en calorías</li>
-            <li class="list-group-item">Sedentarismo</li>
-            <li class="list-group-item">Factores genéticos</li>
-            <li class="list-group-item">Problemas hormonales</li>
-        </ul>
+<div class="highlight-card">
+    <h2 class="text-primary mb-4"><i class="fas fa-search me-3"></i>Causas de la Obesidad</h2>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-danger">
+                        <i class="fas fa-utensils me-2"></i>Alimentación
+                    </h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Consumo excesivo de calorías</li>
+                        <li class="list-group-item">Alimentos procesados</li>
+                        <li class="list-group-item">Bebidas azucaradas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-danger">
+                        <i class="fas fa-couch me-2"></i>Estilo de Vida
+                    </h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Sedentarismo</li>
+                        <li class="list-group-item">Horarios de sueño irregulares</li>
+                        <li class="list-group-item">Estrés crónico</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}
