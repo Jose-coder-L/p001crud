@@ -3,62 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salud y Obesidad</title>
+    <title>Obesidad: Prevención y Consecuencias | Salud Integral</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
-        .medical-bg {
+        :root {
+            --medical-primary: #00695c;
+            --medical-secondary: #2d3436;
+            --medical-accent: #e74c3c;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
             background: linear-gradient(135deg, #f8f9fa, #e9ecef);
             min-height: 100vh;
+            color: var(--medical-secondary);
         }
+        
+        .medical-navbar {
+            background: var(--medical-primary) !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
         .nav-button {
             transition: all 0.3s ease;
-            border-radius: 15px;
-            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            padding: 0.75rem 1.5rem;
             margin: 0 0.5rem;
             font-weight: 500;
+            border: none;
         }
+        
         .highlight-card {
             border: none;
-            border-radius: 20px;
+            border-radius: 16px;
             background: white;
-            padding: 2rem;
+            padding: 2.5rem;
             margin: 2rem 0;
-            box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+        
+        .medical-alert {
+            border-left: 5px solid var(--medical-accent);
+            border-radius: 8px;
+        }
+        
+        .stat-card {
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .risk-factor {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .risk-factor:before {
+            content: "⚠";
+            position: absolute;
+            left: 0;
+            color: var(--medical-accent);
         }
     </style>
 </head>
-<body class="medical-bg">
+<body class="d-flex flex-column min-vh-100">
     <!-- Barra de Navegación -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark medical-navbar sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="{% url 'crud:home' %}">
-                <i class="fas fa-heartbeat me-2"></i>Salud Integral
+            <a class="navbar-brand d-flex align-items-center" href="{% url 'crud:home' %}">
+                <i class="fas fa-heartbeat me-2"></i>
+                <span class="fw-bold">Salud Integral</span>
             </a>
             <div class="d-flex">
-                <a class="btn nav-button btn-success" href="{% url 'crud:home' %}">
+                <a class="btn nav-button btn-success mx-1" href="{% url 'crud:home' %}">
                     <i class="fas fa-home me-2"></i>Inicio
                 </a>
-                <a class="btn nav-button btn-info" href="{% url 'crud:causes' %}">
-                    <i class="fas fa-exclamation-circle me-2"></i>Causas
+                <a class="btn nav-button btn-info mx-1" href="{% url 'crud:causes' %}">
+                    <i class="fas fa-search me-2"></i>Causas
                 </a>
-                <a class="btn nav-button btn-warning" href="{% url 'crud:prevention' %}">
+                <a class="btn nav-button btn-warning mx-1" href="{% url 'crud:prevention' %}">
                     <i class="fas fa-shield-alt me-2"></i>Prevención
                 </a>
-                <a class="btn nav-button btn-danger" href="{% url 'crud:statistics' %}">
-                    <i class="fas fa-chart-bar me-2"></i>Estadísticas
+                <a class="btn nav-button btn-danger mx-1" href="{% url 'crud:statistics' %}">
+                    <i class="fas fa-chart-pie me-2"></i>Estadísticas
                 </a>
             </div>
         </div>
     </nav>
 
-    <!-- Bloque de Contenido Dinámico -->
-    <main class="container">
+    <!-- Contenido Principal -->
+    <main class="container my-4 flex-grow-1">
         {% block content %}
-        <!-- Contenido específico de cada página -->
+        <div class="highlight-card">
+            <div class="text-center mb-5">
+                <h1 class="display-4 fw-bold text-primary mb-3">
+                    <i class="fas fa-weight me-2"></i>Obesidad: Un Problema Global
+                </h1>
+                <p class="lead text-muted">
+                    Información médica basada en evidencia científica - OMS 2023
+                </p>
+            </div>
+            
+            <!-- Sección de Alerta Médica -->
+            <div class="alert medical-alert bg-light mb-5">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-exclamation-triangle fa-2x text-danger me-3"></i>
+                    <p class="mb-0 fs-5">
+                        La obesidad reduce la esperanza de vida en <strong>5-20 años</strong> según estudios recientes. 
+                        Es considerada la <span class="text-danger fw-bold">segunda causa de muerte prevenible</span> después del tabaquismo.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Información en 2 columnas -->
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card stat-card h-100 border-primary">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary">
+                                <i class="fas fa-chart-line me-2"></i>Impacto Actual
+                            </h3>
+                            <ul class="list-group list-group-flush fs-5">
+                                <li class="list-group-item risk-factor">
+                                    <strong>39%</strong> de adultos con sobrepeso (1.9 billones)
+                                </li>
+                                <li class="list-group-item risk-factor">
+                                    <strong>13%</strong> con obesidad (650 millones)
+                                </li>
+                                <li class="list-group-item risk-factor">
+                                    <strong>41 millones</strong> de niños afectados
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="card stat-card h-100 border-success">
+                        <div class="card-body">
+                            <h3 class="card-title text-success">
+                                <i class="fas fa-heartbeat me-2"></i>Beneficios de la Prevención
+                            </h3>
+                            <ul class="list-group list-group-flush fs-5">
+                                <li class="list-group-item">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    Reduce diabetes tipo 2 en <strong>58%</strong>
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    Disminuye presión arterial en <strong>40%</strong>
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    Mejora movilidad articular en <strong>75%</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Llamado a la acción -->
+            <div class="text-center mt-5">
+                <div class="d-inline-block border-start border-3 border-info ps-3">
+                    <h4 class="text-info">
+                        <i class="fas fa-info-circle me-2"></i>¿Sabías qué?
+                    </h4>
+                    <p class="mb-0 fs-5">
+                        Perder solo <strong>5-10%</strong> de tu peso corporal puede reducir significativamente 
+                        los riesgos para la salud.
+                    </p>
+                </div>
+            </div>
+        </div>
         {% endblock %}
     </main>
 
+    <!-- Pie de Página -->
+    <footer class="bg-dark text-white py-4 mt-auto">
+        <div class="container text-center">
+            <p class="mb-0">
+                <i class="fas fa-stethoscope me-2"></i>Información médica verificada | 
+                <a href="#" class="text-white">Política de privacidad</a> | 
+                © 2023 Salud Integral
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js"></script>
+    <script src="https://kit.fontawesome.com/your-actual-kit.js" crossorigin="anonymous"></script>
 </body>
 </html>
