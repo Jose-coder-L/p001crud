@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salud Integral - Control de Obesidad</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Estilos personalizados -->
+    <style>
+        :root {
+            --medical-primary: #00695c;
+            --medical-secondary: #2d3436;
+            --medical-accent: #e74c3c;
+        }
+
+        body {
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef) fixed;
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .medical-navbar {
+            background: var(--medical-primary) !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .nav-button {
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            padding: 0.75rem 1.5rem;
+            margin: 0 0.5rem;
+            white-space: nowrap;
+        }
+
+        .highlight-card {
+            border: none;
+            border-radius: 16px;
+            background: white;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 1400px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        @media (max-width: 768px) {
+            .navbar-nav {
+                width: 100%;
+                margin-top: 1rem;
+            }
+            
+            .nav-button {
+                width: 100%;
+                margin: 0.5rem 0;
+                white-space: normal;
+            }
+            
+            .highlight-card {
+                padding: 1rem;
+                margin: 1rem 0.5rem;
+                border-radius: 8px;
+            }
+        }
+
+        img, iframe, video {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de Navegación Responsive -->
+    <nav class="navbar navbar-expand-lg navbar-dark medical-navbar fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'crud:home' %}">
+                <i class="fas fa-heartbeat me-2"></i>Salud Integral
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <div class="navbar-nav ms-auto">
+                    <a class="btn nav-button btn-success" href="{% url 'crud:home' %}">
+                        <i class="fas fa-home me-2"></i>Inicio
+                    </a>
+                    <a class="btn nav-button btn-info" href="{% url 'crud:causes' %}">
+                        <i class="fas fa-search me-2"></i>Causas
+                    </a>
+                    <a class="btn nav-button btn-warning" href="{% url 'crud:prevention' %}">
+                        <i class="fas fa-shield-alt me-2"></i>Prevención
+                    </a>
+                    <a class="btn nav-button btn-danger" href="{% url 'crud:statistics' %}">
+                        <i class="fas fa-chart-pie me-2"></i>Estadísticas
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="container mt-5 pt-4">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
