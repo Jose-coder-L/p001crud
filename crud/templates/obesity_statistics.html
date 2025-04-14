@@ -3,7 +3,10 @@
 
 {% block content %}
 <div class="highlight-card mt-5">
-    <h2 class="display-5 text-purple mb-4"><i class="fas fa-chart-bar me-3"></i>Datos Epidemiológicos</h2>
+    <h2 class="display-5 text-purple mb-4">
+        <i class="fas fa-chart-bar me-3"></i>
+        Datos Epidemiológicos
+    </h2>
     
     <div class="row g-4">
         <div class="col-lg-8">
@@ -11,6 +14,9 @@
                 <div class="card-body">
                     <h3 class="text-primary mb-4">Distribución por Grupos de Edad</h3>
                     <canvas id="ageDistributionChart" class="w-100" height="400"></canvas>
+                    <p class="mt-3 fs-5">
+                        El gráfico anterior representa la distribución de la población en función de los grupos de edad, lo que permite identificar tendencias y áreas de riesgo en la salud pública.
+                    </p>
                 </div>
             </div>
         </div>
@@ -18,7 +24,10 @@
         <div class="col-lg-4">
             <div class="card border-danger h-100 shadow">
                 <div class="card-body">
-                    <h4 class="text-danger mb-3"><i class="fas fa-exclamation-triangle me-2"></i>Datos Clave</h4>
+                    <h4 class="text-danger mb-3">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        Datos Clave
+                    </h4>
                     <ul class="list-group list-group-flush fs-5">
                         <li class="list-group-item">
                             <span class="badge bg-primary me-2">+300%</span>
@@ -37,5 +46,28 @@
             </div>
         </div>
     </div>
+    
+    <!-- Bloque adicional con más información y gráfica -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h3 class="text-success mb-4">
+                        Niveles de Obesidad y Distribución por Edades
+                    </h3>
+                    <p class="fs-5">
+                        Esta sección presenta una visión detallada de la incidencia de la obesidad en distintos grupos etarios. El análisis gráfico permite observar la correlación entre la edad y la prevalencia de la obesidad, lo cual es crucial para el desarrollo de estrategias de prevención y educación en salud.
+                    </p>
+                    <div class="text-center mt-4">
+                        <img src="{% static 'images/obesity_age_chart.png' %}" 
+                             alt="Gráfico de Edades y Niveles de Obesidad" 
+                             class="img-fluid" 
+                             style="max-height: 500px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
+
