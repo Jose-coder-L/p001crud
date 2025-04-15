@@ -5,242 +5,222 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obesidad: Prevención y Consecuencias | Salud Integral</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --medical-primary: #2A5C82;
-            --medical-secondary: #4A90E2;
-            --medical-accent: #FF6B6B;
-            --medical-success: #88C057;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obesidad: Prevención y Consecuencias | Salud Integral</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --medical-primary: #2A5C82;
+      --medical-secondary: #4A90E2;
+      --medical-accent: #FF6B6B;
+      --medical-success: #88C057;
+    }
 
-        .hero-section {
-            background: linear-gradient(135deg, var(--medical-primary) 0%, var(--medical-secondary) 100%);
-            border-radius: 20px;
-            color: white;
-            padding: 4rem 2rem;
-            margin: 2rem 0;
-            position: relative;
-            overflow: hidden;
-        }
+    .hero-section {
+      background: linear-gradient(135deg, var(--medical-primary) 0%, var(--medical-secondary) 100%);
+      border-radius: 20px;
+      color: white;
+      padding: 4rem 2rem;
+      margin: 2rem 0;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
 
-        .hero-section::after {
-            content: '';
-            position: absolute;
-            bottom: -50px;
-            right: -50px;
-            width: 200px;
-            height: 200px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-        }
+    .hero-section h1 {
+      font-size: 2.8rem;
+    }
+    
+    .hero-section p {
+      font-size: 1.25rem;
+    }
 
-        .medical-card {
-            border: none;
-            border-radius: 15px;
-            background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+    .medical-card {
+      border: none;
+      border-radius: 15px;
+      background: white;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-        .medical-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-        }
+    .medical-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    }
 
-        .risk-factor {
-            position: relative;
-            padding-left: 2rem;
-        }
+    .risk-factor {
+      position: relative;
+      padding-left: 2rem;
+    }
 
-        .risk-factor::before {
-            content: "⚠";
-            position: absolute;
-            left: 0;
-            color: var(--medical-accent);
-            font-size: 1.2em;
-        }
+    .risk-factor::before {
+      content: "⚠";
+      position: absolute;
+      left: 0;
+      color: var(--medical-accent);
+      font-size: 1.2em;
+    }
 
-        .timeline-roadmap {
-            border-left: 3px solid var(--medical-secondary);
-            padding-left: 2rem;
-            margin-left: 1rem;
-        }
+    .timeline-roadmap {
+      border-left: 3px solid var(--medical-secondary);
+      padding-left: 2rem;
+      margin-left: 1rem;
+    }
 
-        @media (max-width: 768px) {
-            .hero-section {
-                padding: 2rem 1rem;
-                border-radius: 15px;
-            }
-            
-            .display-3 {
-                font-size: 2.5rem;
-            }
-        }
-    </style>
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 2rem 1rem;
+        border-radius: 15px;
+      }
+      
+      .display-3 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
-    <main class="container my-4 flex-grow-1">
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="row align-items-center">
-                <div class="col-lg-8 text-center text-lg-start">
-                    <h1 class="display-3 fw-bold mb-4">
-                        <i class="fas fa-balance-scale-left"></i> Combatiendo la Obesidad
-                    </h1>
-                    <p class="lead mb-4 opacity-75">
-                        Estrategias basadas en evidencia científica - Datos actualizados OMS 2023
-                    </p>
-                    <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
-                        <a href="#prevencion" class="btn btn-light btn-lg">
-                            <i class="fas fa-heartbeat me-2"></i> Prevención
-                        </a>
-                        <a href="#estadisticas" class="btn btn-outline-light btn-lg">
-                            <i class="fas fa-chart-bar me-2"></i> Estadísticas
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 d-none d-lg-block">
-                    <img src="{% static 'images/health-icon.svg' %}" alt="Salud" class="img-fluid">
-                </div>
-            </div>
-        </section>
+  <main class="container my-4 flex-grow-1">
+    <!-- Hero Section (sin imagen ni botones) -->
+    <section class="hero-section">
+      <h1 class="display-3 fw-bold mb-4">
+        <i class="fas fa-balance-scale-left"></i> Combatiendo la Obesidad
+      </h1>
+      <p class="lead mb-4 opacity-75">
+        Estrategias basadas en evidencia científica - Datos actualizados OMS 2023
+      </p>
+    </section>
 
-        <!-- Estadísticas Clave -->
-        <section id="estadisticas" class="my-5">
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="medical-card text-center p-4">
-                        <div class="text-primary mb-3">
-                            <i class="fas fa-weight fa-3x"></i>
-                        </div>
-                        <h3 class="h2 fw-bold">39%</h3>
-                        <p class="mb-0">Adultos con sobrepeso</p>
-                        <small class="text-muted">(OMS 2023)</small>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="medical-card text-center p-4">
-                        <div class="text-danger mb-3">
-                            <i class="fas fa-running fa-3x"></i>
-                        </div>
-                        <h3 class="h2 fw-bold">+58%</h3>
-                        <p class="mb-0">Reducción riesgo diabetes</p>
-                        <small class="text-muted">(NEJM 2022)</small>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="medical-card text-center p-4">
-                        <div class="text-success mb-3">
-                            <i class="fas fa-apple-alt fa-3x"></i>
-                        </div>
-                        <h3 class="h2 fw-bold">83%</h3>
-                        <p class="mb-0">Casos prevenibles</p>
-                        <small class="text-muted">(The Lancet 2023)</small>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="medical-card text-center p-4">
-                        <div class="text-warning mb-3">
-                            <i class="fas fa-child fa-3x"></i>
-                        </div>
-                        <h3 class="h2 fw-bold">1:5</h3>
-                        <p class="mb-0">Niños con obesidad</p>
-                        <small class="text-muted">(UNICEF 2023)</small>
-                    </div>
-                </div>
+    <!-- Estadísticas Clave -->
+    <section id="estadisticas" class="my-5">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="medical-card text-center p-4">
+            <div class="text-primary mb-3">
+              <i class="fas fa-weight fa-3x"></i>
             </div>
-        </section>
-
-        <!-- Sección de Prevención -->
-        <section id="prevencion" class="my-5">
-            <div class="row g-4">
-                <div class="col-lg-6">
-                    <div class="medical-card p-4 h-100">
-                        <h3 class="text-success mb-4">
-                            <i class="fas fa-shield-alt me-2"></i> Estrategias Efectivas
-                        </h3>
-                        <div class="timeline-roadmap">
-                            <div class="mb-4 position-relative">
-                                <div class="timeline-badge bg-success"></div>
-                                <h5>Nutrición Balanceada</h5>
-                                <p class="text-muted">Dieta mediterránea reduce 33% riesgo obesidad (Estudio PREDIMED)</p>
-                            </div>
-                            <div class="mb-4 position-relative">
-                                <div class="timeline-badge bg-primary"></div>
-                                <h5>Actividad Física</h5>
-                                <p class="text-muted">150 min/semana disminuyen IMC en 1.2 kg/m² (CDC 2023)</p>
-                            </div>
-                            <div class="position-relative">
-                                <div class="timeline-badge bg-warning"></div>
-                                <h5>Sueño Reparador</h5>
-                                <p class="text-muted">7-9 horas reducen apetito en 25% (Sleep Medicine 2022)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-6">
-                    <div class="medical-card p-4 h-100">
-                        <h3 class="text-danger mb-4">
-                            <i class="fas fa-exclamation-triangle me-2"></i> Riesgos Asociados
-                        </h3>
-                        <ul class="list-unstyled">
-                            <li class="risk-factor mb-3">
-                                <strong>Enfermedad Cardiovascular:</strong> 68% mayor riesgo (AHA 2023)
-                            </li>
-                            <li class="risk-factor mb-3">
-                                <strong>Diabetes Tipo 2:</strong> 80% casos relacionados (IDF 2023)
-                            </li>
-                            <li class="risk-factor">
-                                <strong>Problemas Articulares:</strong> 4x más osteoartritis (Arthritis Foundation)
-                            </li>
-                        </ul>
-                        <div class="alert alert-danger mt-4">
-                            <i class="fas fa-brain me-2"></i> La obesidad reduce volumen cerebral en 0.3% anual (Neurology 2023)
-                        </div>
-                    </div>
-                </div>
+            <h3 class="h2 fw-bold">39%</h3>
+            <p class="mb-0">Adultos con sobrepeso</p>
+            <small class="text-muted">(OMS 2023)</small>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="medical-card text-center p-4">
+            <div class="text-danger mb-3">
+              <i class="fas fa-running fa-3x"></i>
             </div>
-        </section>
-
-        <!-- Plan de Acción -->
-        <section class="my-5">
-            <div class="medical-card p-4">
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-                        <h3 class="text-primary">
-                            <i class="fas fa-road me-2"></i> Plan de 12 Semanas
-                        </h3>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <i class="fas fa-check-circle text-success me-2"></i>
-                                Evaluación médica inicial
-                            </li>
-                            <li class="list-group-item">
-                                <i class="fas fa-check-circle text-success me-2"></i>
-                                Plan nutricional personalizado
-                            </li>
-                            <li class="list-group-item">
-                                <i class="fas fa-check-circle text-success me-2"></i>
-                                Monitoreo de progreso semanal
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 text-center mt-4 mt-md-0">
-                        <img src="{% static 'images/progress-chart.svg' %}" alt="Progreso" class="img-fluid" style="max-height: 200px;">
-                    </div>
-                </div>
+            <h3 class="h2 fw-bold">+58%</h3>
+            <p class="mb-0">Reducción riesgo diabetes</p>
+            <small class="text-muted">(NEJM 2022)</small>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="medical-card text-center p-4">
+            <div class="text-success mb-3">
+              <i class="fas fa-apple-alt fa-3x"></i>
             </div>
-        </section>
-    </main>
+            <h3 class="h2 fw-bold">83%</h3>
+            <p class="mb-0">Casos prevenibles</p>
+            <small class="text-muted">(The Lancet 2023)</small>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="medical-card text-center p-4">
+            <div class="text-warning mb-3">
+              <i class="fas fa-child fa-3x"></i>
+            </div>
+            <h3 class="h2 fw-bold">1:5</h3>
+            <p class="mb-0">Niños con obesidad</p>
+            <small class="text-muted">(UNICEF 2023)</small>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/your-actual-kit.js" crossorigin="anonymous"></script>
+    <!-- Sección de Prevención -->
+    <section id="prevencion" class="my-5">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="medical-card p-4 h-100">
+            <h3 class="text-success mb-4">
+              <i class="fas fa-shield-alt me-2"></i> Estrategias Efectivas
+            </h3>
+            <div class="timeline-roadmap">
+              <div class="mb-4 position-relative">
+                <div class="timeline-badge bg-success"></div>
+                <h5>Nutrición Balanceada</h5>
+                <p class="text-muted">Dieta mediterránea reduce 33% riesgo obesidad (Estudio PREDIMED)</p>
+              </div>
+              <div class="mb-4 position-relative">
+                <div class="timeline-badge bg-primary"></div>
+                <h5>Actividad Física</h5>
+                <p class="text-muted">150 min/semana disminuyen IMC en 1.2 kg/m² (CDC 2023)</p>
+              </div>
+              <div class="position-relative">
+                <div class="timeline-badge bg-warning"></div>
+                <h5>Sueño Reparador</h5>
+                <p class="text-muted">7-9 horas reducen apetito en 25% (Sleep Medicine 2022)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="medical-card p-4 h-100">
+            <h3 class="text-danger mb-4">
+              <i class="fas fa-exclamation-triangle me-2"></i> Riesgos Asociados
+            </h3>
+            <ul class="list-unstyled">
+              <li class="risk-factor mb-3">
+                <strong>Enfermedad Cardiovascular:</strong> 68% mayor riesgo (AHA 2023)
+              </li>
+              <li class="risk-factor mb-3">
+                <strong>Diabetes Tipo 2:</strong> 80% casos relacionados (IDF 2023)
+              </li>
+              <li class="risk-factor">
+                <strong>Problemas Articulares:</strong> 4x más osteoartritis (Arthritis Foundation)
+              </li>
+            </ul>
+            <div class="alert alert-danger mt-4">
+              <i class="fas fa-brain me-2"></i> La obesidad reduce volumen cerebral en 0.3% anual (Neurology 2023)
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plan de Acción sin imagen de progreso -->
+    <section class="my-5">
+      <div class="medical-card p-4">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h3 class="text-primary mb-4">
+              <i class="fas fa-road me-2"></i> Plan de 12 Semanas
+            </h3>
+            <ul class="list-group list-group-flush fs-5">
+              <li class="list-group-item">
+                <i class="fas fa-check-circle text-success me-2"></i>
+                Evaluación médica inicial
+              </li>
+              <li class="list-group-item">
+                <i class="fas fa-check-circle text-success me-2"></i>
+                Plan nutricional personalizado
+              </li>
+              <li class="list-group-item">
+                <i class="fas fa-check-circle text-success me-2"></i>
+                Monitoreo de progreso semanal
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/your-actual-kit.js" crossorigin="anonymous"></script>
 </body>
 </html>
 {% endblock %}
