@@ -3,10 +3,10 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'home.html')
 
-def obesity_causes(request):
+def procedimiento(request):
     return render(request, 'procedimiento.html')
 
-def obesity_prevention(request):
+def prevention(request):
     return render(request, 'prevention.html')
 
 def obesity_statistics(request):
