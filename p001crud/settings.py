@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-&gyr5%6)d#mmsf2*u5gj*g05!_1z$tzmaf)gr%vg6@nf7xz=s0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['18.229.139.174', 'localhost','obesidadsaludinfo.duckdns.org']
+ALLOWED_HOSTS = ['18.229.139.174', 'localhost','incediosyseguridad.ddns.net']
 
 SECURE_SSL_REDIRECT = False  # ← Debe ser False
 SESSION_COOKIE_SECURE = False
