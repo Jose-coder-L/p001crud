@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-def obesity_home(request):
+def home(request):
     return render(request, 'home.html')
 
 def obesity_causes(request):
