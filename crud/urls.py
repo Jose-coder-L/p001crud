@@ -5,11 +5,11 @@ app_name = 'crud'
 
 urlpatterns = [
     # Página Principal
-    path('', views.obesity_home, name='home'),
+    path('', views.home, name='home'),
     
     # Secciones de Obesidad
-    path('causas/', views.obesity_causes, name='causes'),
-    path('prevencion/', views.obesity_prevention, name='prevention'),
+    path('causas/', views.procedimiento, name='procedimiento'),
+    path('prevencion/', views.prevention, name='prevención'),
     path('estadisticas/', views.obesity_statistics, name='statistics'),
     path('consejos/', views.healthy_tips, name='tips'),
     
