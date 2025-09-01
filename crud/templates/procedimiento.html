@@ -2,36 +2,335 @@
 {% load static %}
 
 {% block content %}
-<div class="highlight-card mt-5">
-    <h2 class="display-5 text-primary mb-4">
-        <i class="fas fa-search me-3"></i>Causas Principales de la Obesidad
-    </h2>
-    
-    <div class="row g-4">
-        <!-- Factores Alimenticios -->
-        <div class="col-lg-6">
-            <div class="card shadow-lg border-danger h-100">
-                <div class="card-body">
-                    <h3 class="card-title text-danger">
-                        <i class="fas fa-utensils me-2"></i>Factores Alimenticios
-                    </h3>
-                    <div class="list-group list-group-flush fs-5">
-                        <div class="list-group-item d-flex align-items-start">
-                            <i class="fas fa-cookie text-danger me-3 mt-1"></i>
-                            <div>
-                                <strong>Alimentos ultraprocesados:</strong> Contribuyen al 58% de la ingesta calórica diaria en países occidentales (Estudio NHANES, 2018). Contienen aditivos que alteran la saciedad.<sup>1</sup>
-                            </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prevención de Incendios en Escuelas Chilenas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --color-primary: #DC3545;
+            --color-secondary: #FD7E14;
+            --color-accent: #20C997;
+            --color-chile-blue: #0039A6;
+            --color-chile-red: #D52B1E;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .header-banner {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 5px solid var(--color-chile-red);
+        }
+        
+        .card {
+            transition: transform 0.3s;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .btn-chile {
+            background-color: var(--color-chile-blue);
+            color: white;
+            border: none;
+        }
+        
+        .btn-chile:hover {
+            background-color: #002a7a;
+            color: white;
+        }
+        
+        .btn-chile-red {
+            background-color: var(--color-chile-red);
+            color: white;
+            border: none;
+        }
+        
+        .btn-chile-red:hover {
+            background-color: #b32016;
+            color: white;
+        }
+        
+        .protocol-step {
+            border-left: 4px solid var(--color-chile-blue);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .risk-factor {
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--color-secondary);
+        }
+        
+        .prevention-tip {
+            background-color: #e8f5e9;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-left: 4px solid var(--color-accent);
+        }
+        
+        .normativa-box {
+            background-color: #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin: 2rem 0;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0.5rem;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--color-chile-blue);
+        }
+        
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            left: -1.7rem;
+            top: 1.5rem;
+            width: 2px;
+            height: calc(100% + 1rem);
+            background-color: var(--color-chile-blue);
+        }
+        
+        .timeline-item:last-child:after {
+            display: none;
+        }
+        
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .chile-flag {
+            height: 20px;
+            width: 30px;
+            background: linear-gradient(to bottom, 
+                #FFFFFF 0%, #FFFFFF 33.33%, 
+                #0039A6 33.33%, #0039A6 66.66%, 
+                #D52B1E 66.66%, #D52B1E 100%);
+            display: inline-block;
+            margin: 0 5px;
+            vertical-align: middle;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <!-- Banner Header -->
+    <div class="header-banner">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">
+                <i class="fas fa-fire-extinguisher me-2"></i>Prevención de Incendios en Escuelas
+            </h1>
+            <p class="lead">Protocolos y normativas para establecimientos educacionales en Chile</p>
+            <div class="mt-3">
+                <span class="chile-flag"></span>
+                <span class="mx-2">Contexto chileno</span>
+                <span class="chile-flag"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Introducción -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="alert alert-info">
+                    <h4 class="alert-heading"><i class="fas fa-info-circle me-2"></i>Importancia de la prevención en el contexto chileno</h4>
+                    <p class="mb-0">Chile cuenta con una normativa específica para la seguridad contra incendios en establecimientos educacionales. La implementación de protocolos adecuados puede reducir hasta en un 50% el riesgo de fatalidades en caso de incendio :cite[3].</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Normativa Chilena -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="card shadow">
+                    <div class="card-header bg-chile-blue text-white">
+                        <h3 class="card-title mb-0">
+                            <i class="fas fa-gavel me-2"></i>Normativa Chilena para Establecimientos Educacionales
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="normativa-box">
+                            <h5><i class="fas fa-file-alt me-2"></i>Decreto Supremo N° 276/2003</h5>
+                            <p>Reglamento de seguridad contra incendios de la Dirección General de Obras Públicas, que establece los requisitos mínimos para establecimientos educacionales.</p>
                         </div>
-                        <div class="list-group-item d-flex align-items-start">
-                            <i class="fas fa-candy-cane text-danger me-3 mt-1"></i>
-                            <div>
-                                <strong>Bebidas azucaradas:</strong> Una lata diaria aumenta un 60% el riesgo de obesidad infantil (OMS, 2020). El jarabe de maíz alto en fructosa altera el metabolismo lipídico.<sup>2</sup>
-                            </div>
+                        
+                        <div class="normativa-box">
+                            <h5><i class="fas fa-file-alt me-2"></i>Ley 20.096 sobre Seguridad Escolar</h5>
+                            <p>Obliga a todos los establecimientos educacionales a contar con planes de seguridad escolar que incluyan protocolos contra incendios.</p>
                         </div>
-                        <div class="list-group-item d-flex align-items-start">
-                            <i class="fas fa-bread-slice text-danger me-3 mt-1"></i>
-                            <div>
-                                <strong>Desequilibrio nutricional:</strong> La dieta occidental típica tiene ratio omega-6/omega-3 de 16:1 (ideal 4:1), promoviendo inflamación.<sup>3</sup>
+                        
+                        <div class="normativa-box">
+                            <h5><i class="fas fa-file-alt me-2"></i>Norma Técnica NCh 2180</h5>
+                            <p>Establece los requisitos para la instalación y mantenimiento de sistemas de detección y alarma de incendios.</p>
+                        </div>
+                        
+                        <div class="alert alert-warning mt-3">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            <strong>Nota:</strong> Todos los establecimientos educacionales deben contar con un Plan de Emergencia actualizado anualmente y realizar al menos cuatro simulacros al año según las directrices de la ONEMI.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tarjetas principales -->
+        <div class="row g-4">
+            <!-- Medidas Estructurales -->
+            <div class="col-md-6">
+                <div class="card border-danger h-100 shadow">
+                    <div class="card-header bg-danger text-white">
+                        <h3 class="card-title mb-0">
+                            <i class="fas fa-building me-2"></i>Medidas Estructurales Obligatorias
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex align-items-start">
+                                <i class="fas fa-check-circle text-danger me-3 mt-1"></i>
+                                <div>
+                                    <strong>Detección temprana:</strong> Instalación de detectores de humo en áreas estratégicas. Los detectores funcionantes reducen un 50% el riesgo de fatalidades :cite[3].
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex align-items-start">
+                                <i class="fas fa-check-circle text-danger me-3 mt-1"></i>
+                                <div>
+                                    <strong>Extintores accesibles:</strong> Deben ubicarse cada 200 metros en zonas de riesgo como cocinas, laboratorios y salas de calderas.
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex align-items-start">
+                                <i class="fas fa-check-circle text-danger me-3 mt-1"></i>
+                                <div>
+                                    <strong>Señalización clara:</strong> Salidas de emergencia y rutas de evacuación deben estar señalizadas según normativa NCh 2095.
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex align-items-start">
+                                <i class="fas fa-check-circle text-danger me-3 mt-1"></i>
+                                <div>
+                                    <strong>Mantenimiento eléctrico:</strong> Revisiones trimestrales de instalaciones eléctricas para prevenir cortocircuitos.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Planificación y Capacitación -->
+            <div class="col-md-6">
+                <div class="card border-warning h-100 shadow">
+                    <div class="card-header bg-warning text-dark">
+                        <h3 class="card-title mb-0">
+                            <i class="fas fa-clipboard-list me-2"></i>Planificación y Capacitación
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex align-items-start">
+                                <i class="fas fa-check-circle text-warning me-3 mt-1"></i>
+                                <div>
+                                    <strong>Simulacros regulares:</strong> Mínimo 4 al año, en diferentes horarios y condiciones, para preparar a la comunidad educativa.
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex align-items-start">
+                                <i class="fas fa-check-circle text-warning me-3 mt-1"></i>
+                                <div>
+                                    <strong>Capacitación docente:</strong> Formación en protocolos de emergencia y uso de equipos contra incendios, con certificación anual.
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex align-items-start">
+                                <i class="fas fa-check-circle text-warning me-3 mt-1"></i>
+                                <div>
+                                    <strong>Educación estudiantil:</strong> Incorporar la prevención de incendios en el currículo desde educación parvularia.
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex align-items-start">
+                                <i class="fas fa-check-circle text-warning me-3 mt-1"></i>
+                                <div>
+                                    <strong>Coordinación con bomberos:</strong> Realizar visitas programadas y ejercicios conjuntos con bomberos locales.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Protocolos de Emergencia -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card border-info shadow">
+                    <div class="card-header bg-info text-white">
+                        <h3 class="card-title mb-0">
+                            <i class="fas fa-list-alt me-2"></i>Protocolo de Emergencia para Incendios en Establecimientos Educacionales
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h4 class="text-info">1. Detección y Activación</h4>
+                                <p>Al detectar humo o fuego, activar inmediatamente la alarma contra incendios. En Chile, las alarmas deben ser audibles y visibles en todo el establecimiento.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4 class="text-info">2. Evaluación Inicial</h4>
+                                <p>El encargado de emergencia evalúa la magnitud del incidente y decide si procede la evacuación total o parcial.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4 class="text-info">3. Comunicación</h4>
+                                <p>Notificar inmediatamente a Bomberos (132) y Carabineros (133). Usar el sistema de megafonía para dar instrucciones claras.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4 class="text-info">4. Evacuación Ordenada</h4>
+                                <p>Los docentes guían a estudiantes por rutas preestablecidas. Personas con movilidad reducida deben tener asistencia específica.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4 class="text-info">5. Punto de Encuentro</h4>
+                                <p>Dirigirse a la zona segura externa predefinida. Realizar conteo de estudiantes y personal.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4 class="text-info">6. Comunicación con Familias</h4>
+                                <p>Activar protocolo de comunicación con apoderados para informar sobre la situación y punto de reunificación.</p>
                             </div>
                         </div>
                     </div>
@@ -39,31 +338,157 @@
             </div>
         </div>
 
-        <!-- Hábitos Cotidianos -->
-        <div class="col-lg-6">
-            <div class="card shadow-lg border-warning h-100">
-                <div class="card-body">
-                    <h3 class="card-title text-warning">
-                        <i class="fas fa-running me-2"></i>Hábitos Cotidianos
-                    </h3>
-                    <div class="list-group list-group-flush fs-5">
-                        <div class="list-group-item d-flex align-items-start">
-                            <i class="fas fa-tv text-warning me-3 mt-1"></i>
-                            <div>
-                                <strong>Sedentarismo:</strong> >4h/día de pantallas aumenta 2.5 veces riesgo obesidad (Lancet, 2021). La inactividad reduce la adiponectina.<sup>4</sup>
+        <!-- Factores de Riesgo y Prevención -->
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <div class="card border-danger shadow">
+                    <div class="card-header bg-danger text-white">
+                        <h3 class="card-title mb-0">
+                            <i class="fas fa-exclamation-triangle me-2"></i>Factores de Riesgo Específicos en Escuelas
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="risk-factor">
+                            <h5><i class="fas fa-plug text-danger me-2"></i>Instalaciones eléctricas</h5>
+                            <p>Sobrecarga de enchufes, equipos defectuosos y cableado en mal estado. Revisión trimestral obligatoria.</p>
+                        </div>
+                        <div class="risk-factor">
+                            <h5><i class="fas fa-utensils text-danger me-2"></i>Cocinas y laboratorios</h5>
+                            <p>Manejo inadecuado de materiales inflamables y fuentes de calor. Representan la causa principal de incendios :cite[3].</p>
+                        </div>
+                        <div class="risk-factor">
+                            <h5><i class="fas fa-boxes text-danger me-2"></i>Acumulación de material combustible</h5>
+                            <p>Papeles, muebles viejos y productos químicos mal almacenados. Mantener áreas despejadas y ordenadas.</p>
+                        </div>
+                        <div class="risk-factor">
+                            <h5><i class="fas fa-fire-extinguisher text-danger me-2"></i>Falta de mantenimiento de equipos</h5>
+                            <p>Extintores vencidos o alarmas sin funcionar. Verificación mensual requerida por normativa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medidas de Prevención -->
+            <div class="col-md-6">
+                <div class="card border-success shadow">
+                    <div class="card-header bg-success text-white">
+                        <h3 class="card-title mb-0">
+                            <i class="fas fa-shield-alt me-2"></i>Medidas de Prevención Efectivas
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="prevention-tip">
+                            <h5><i class="fas fa-smoking-ban text-success me-2"></i>Prohibición de fumar</h5>
+                            <p>Establecer áreas designadas libres de humo en todo el establecimiento educativo.</p>
+                        </div>
+                        <div class="prevention-tip">
+                            <h5><i class="fas fa-tools text-success me-2"></i>Mantenimiento preventivo</h5>
+                            <p>Revisiones periódicas de instalaciones eléctricas, de gas y equipos de calefacción.</p>
+                        </div>
+                        <div class="prevention-tip">
+                            <h5><i class="fas fa-map-marked-alt text-success me-2"></i>Señalización visible</h5>
+                            <p>Instalar señales luminosas y rutas de evacuación claramente marcadas según normativa chilena.</p>
+                        </div>
+                        <div class="prevention-tip">
+                            <h5><i class="fas fa-users text-success me-2"></i>Brigadas de emergencia</h5>
+                            <p>Formar equipos de estudiantes y docentes capacitados para primera respuesta.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prevención de Incendios Forestales -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card border-warning">
+                    <div class="card-header bg-warning text-dark">
+                        <h3 class="card-title mb-0">
+                            <i class="fas fa-tree me-2"></i>Protocolo Especial: Incendios Forestales
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Para establecimientos educacionales en zonas de interfaz urbano-forestal, se deben considerar protocolos adicionales:</p>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <div class="alert alert-warning">
+                                    <h5><i class="fas fa-road me-2"></i>Rutas de Evacuación Alternativas</h5>
+                                    <p>Identificar al menos tres rutas de evacuación en diferentes direcciones, considerando la posible propagación del fuego :cite[1].</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="alert alert-info">
+                                    <h5><i class="fas fa-air-freshener me-2"></i>Protección Respiratoria</h5>
+                                    <p>Contar con respiradores N95 para proteger contra el humo y cenizas, especialmente para personas con condiciones respiratorias :cite[1].</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="list-group-item d-flex align-items-start">
-                            <i class="fas fa-moon text-warning me-3 mt-1"></i>
-                            <div>
-                                <strong>Trastornos circadianos:</strong> Dormir <6h aumenta grelina (hormona del hambre) en 28% (Sleep Medicine, 2019).<sup>5</sup>
+                        
+                        <div class="alert alert-success mt-3">
+                            <h5><i class="fas fa-seedling me-2"></i>Prevención Estructural</h5>
+                            <p>Mantener una zona de seguridad perimetral libre de vegetación combustible alrededor del establecimiento educativo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recursos y Enlaces -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card border-primary">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="card-title mb-0">
+                            <i class="fas fa-book me-2"></i>Recursos y Normativa Chilena
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Instituciones de apoyo:</h5>
+                                <ul class="list-group">
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="fas fa-truck-fire me-3 text-danger"></i>
+                                        <div>
+                                            <strong>Bomberos de Chile</strong><br>
+                                            <small>Teléfono: 132 | www.bomberos.cl</small>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="fas fa-exclamation-triangle me-3 text-warning"></i>
+                                        <div>
+                                            <strong>ONEMI</strong><br>
+                                            <small>Oficina Nacional de Emergencia | www.onemi.cl</small>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="fas fa-school me-3 text-info"></i>
+                                        <div>
+                                            <strong>Ministerio de Educación</strong><br>
+                                            <small>Políticas de seguridad escolar | www.mineduc.cl</small>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Normativa relevante:</h5>
+                                <ul class="list-group">
+                                    <li class="list-group-item">Ley 20.096 sobre Seguridad Escolar</li>
+                                    <li class="list-group-item">Decreto Supremo N° 276/2003 del MINVU</li>
+                                    <li class="list-group-item">Norma Técnica NCh 2180 de alarmas de incendio</li>
+                                    <li class="list-group-item">Norma Técnica NCh 2095 de señalización</li>
+                                    <li class="list-group-item">Reglamento de seguridad para establecimientos educacionales</li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="list-group-item d-flex align-items-start">
-                            <i class="fas fa-brain text-warning me-3 mt-1"></i>
-                            <div>
-                                <strong>Estrés crónico:</strong> Eleva cortisol 18-50% aumentando adipogénesis visceral (Psychoneuroendocrinology, 2020).<sup>6</sup>
-                            </div>
+                        <div class="text-center mt-4">
+                            <a href="#" class="btn btn-chile me-3">
+                                <i class="fas fa-download me-2"></i>Descargar Protocolo Completo
+                            </a>
+                            <a href="#" class="btn btn-chile-red">
+                                <i class="fas fa-print me-2"></i>Versión Imprimible
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -71,87 +496,23 @@
         </div>
     </div>
 
-    <!-- Factores Biológicos y Genéticos -->
-    <div class="row g-4 mt-4">
-        <div class="col-lg-6">
-            <div class="card shadow-lg border-info h-100">
-                <div class="card-body">
-                    <h3 class="card-title text-info">
-                        <i class="fas fa-dna me-2"></i>Factores Biológicos
-                    </h3>
-                    <div class="list-group list-group-flush fs-5">
-                        <div class="list-group-item d-flex align-items-start">
-                            <i class="fas fa-dna text-info me-3 mt-1"></i>
-                            <div>
-                                <strong>Polimorfismos genéticos:</strong> Variantes en FTO (gen de masa grasa) aumentan riesgo 1.67 veces (Nature Genetics, 2007).<sup>7</sup>
-                            </div>
-                        </div>
-                        <div class="list-group-item d-flex align-items-start">
-                            <i class="fas fa-hormone text-info me-3 mt-1"></i>
-                            <div>
-                                <strong>Resistencia a leptina:</strong> 85% de obesos muestran alteración en señalización de saciedad (NEJM, 2022).<sup>8</sup>
-                            </div>
-                        </div>
-                        <div class="list-group-item d-flex align-items-start">
-                            <i class="fas fa-microbiome text-info me-3 mt-1"></i>
-                            <div>
-                                <strong>Disbiosis intestinal:</strong> Ratio Firmicutes/Bacteroidetes 50% mayor en obesos (Science, 2019).<sup>9</sup>
-                            </div>
-                        </div>
-                    </div>
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Prevención de Incendios Escolares</h5>
+                    <p>Material educativo para establecimientos educacionales de Chile</p>
+                    <p>Actualizado según normativa vigente a septiembre 2025</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p>Desarrollado con <i class="fas fa-heart text-danger"></i> para la comunidad educativa chilena</p>
+                    <p>© 2023-2025 - Todos los derechos reservados</p>
                 </div>
             </div>
         </div>
+    </footer>
 
-        <!-- Factores Ambientales -->
-        <div class="col-lg-6">
-            <div class="card shadow-lg border-success h-100">
-                <div class="card-body">
-                    <h3 class="card-title text-success">
-                        <i class="fas fa-city me-2"></i>Factores Ambientales
-                    </h3>
-                    <div class="list-group list-group-flush fs-5">
-                        <div class="list-group-item d-flex align-items-start">
-                            <i class="fas fa-syringe text-success me-3 mt-1"></i>
-                            <div>
-                                <strong>Obesógenos:</strong> Compuestos como BPA alteran adipogénesis (5μg/kg/día aumentan grasa 11%, Environmental Health, 2021).<sup>10</sup>
-                            </div>
-                        </div>
-                        <div class="list-group-item d-flex align-items-start">
-                            <i class="fas fa-dollar-sign text-success me-3 mt-1"></i>
-                            <div>
-                                <strong>Pobreza alimentaria:</strong> Los alimentos saludables cuestan 5x más por caloría (FAO, 2020).<sup>11</sup>
-                            </div>
-                        </div>
-                        <div class="list-group-item d-flex align-items-start">
-                            <i class="fas fa-prescription-bottle text-success me-3 mt-1"></i>
-                            <div>
-                                <strong>Medicamentos obesogénicos:</strong> Antipsicóticos aumentan IMC 1.3 kg/m²/año (JAMA Psychiatry, 2018).<sup>12</sup>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Sección de Referencias -->
-    <div class="mt-5 p-4 bg-light rounded-3">
-        <h4 class="mb-3"><i class="fas fa-book me-2"></i>Referencias Científicas</h4>
-        <ol class="small">
-            <li>NHANES Dietary Study (2018) - Journal of Nutrition</li>
-            <li>WHO Guideline on Sugar Intake (2020)</li>
-            <li>Simopoulos AP. (2006) - Biomedicine & Pharmacotherapy</li>
-            <li>Global Burden of Disease Study (2021) - The Lancet</li>
-            <li>Taheri S. et al. (2019) - Sleep Medicine</li>
-            <li>Chrousos GP. (2020) - Psychoneuroendocrinology</li>
-            <li>Frayling TM. et al. (2007) - Nature Genetics</li>
-            <li>Friedman JM. (2022) - New England Journal of Medicine</li>
-            <li>Turnbaugh PJ. (2019) - Science</li>
-            <li>Heindel JJ. (2021) - Environmental Health Perspectives</li>
-            <li>FAO Report on Food Prices (2020)</li>
-            <li>Allison DB. et al. (2018) - JAMA Psychiatry</li>
-        </ol>
-    </div>
-</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
 {% endblock %}
