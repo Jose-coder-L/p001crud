@@ -6,7 +6,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@2.0.1"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salud Integral - Control de Obesidad</title>
+    <title>Prevención de Incendios</title>
     
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,9 +17,9 @@
     <!-- Estilos personalizados -->
     <style>
         :root {
-            --medical-primary: #00695c;
-            --medical-secondary: #2d3436;
-            --medical-accent: #e74c3c;
+            --primary-color: #e74c3c;
+            --secondary-color: #2d3436;
+            --accent-color: #f39c12;
         }
 
         body {
@@ -29,8 +29,8 @@
             font-family: 'Arial', sans-serif;
         }
 
-        .medical-navbar {
-            background: var(--medical-primary) !important;
+        .fire-navbar {
+            background: var(--primary-color) !important;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
@@ -79,10 +79,10 @@
 </head>
 <body>
     <!-- Barra de Navegación Responsive -->
-    <nav class="navbar navbar-expand-lg navbar-dark medical-navbar fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fire-navbar fixed-top">
         <div class="container">
             <a class="navbar-brand" href="{% url 'crud:home' %}">
-                <i class="fas fa-heartbeat me-2"></i>Salud Integral
+                <i class="fas fa-fire-extinguisher me-2"></i>Prevención de Incendios
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
@@ -94,14 +94,11 @@
                     <a class="btn nav-button btn-success" href="{% url 'crud:home' %}">
                         <i class="fas fa-home me-2"></i>Inicio
                     </a>
-                    <a class="btn nav-button btn-info" href="{% url 'crud:causes' %}">
-                        <i class="fas fa-search me-2"></i>Causas
+                    <a class="btn nav-button btn-info" href="{% url 'crud:procedimiento' %}">
+                        <i class="fas fa-list-alt me-2"></i>Procedimiento
                     </a>
-                    <a class="btn nav-button btn-warning" href="{% url 'crud:prevention' %}">
+                    <a class="btn nav-button btn-warning" href="{% url 'crud:prevención' %}">
                         <i class="fas fa-shield-alt me-2"></i>Prevención
-                    </a>
-                    <a class="btn nav-button btn-danger" href="{% url 'crud:statistics' %}">
-                        <i class="fas fa-chart-pie me-2"></i>Estadísticas
                     </a>
                 </div>
             </div>
