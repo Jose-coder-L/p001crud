@@ -8,7 +8,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     
     # Secciones de Obesidad
-    path('causas/', views.procedimiento, name='procedimiento'),
+    path('causes/', views.procedimiento, name='procedimiento'),
     path('prevencion/', views.prevention, name='prevención'),
     path('estadisticas/', views.obesity_statistics, name='statistics'),
     path('consejos/', views.healthy_tips, name='tips'),
