@@ -13,9 +13,29 @@
   <style>
     :root {
       --primary: #3498db;
+      --primary-dark: #2980b9;
       --secondary: #2c3e50;
+      --secondary-light: #34495e;
       --accent: #e74c3c;
+      --accent-light: #ff6b6b;
       --success: #27ae60;
+      --light: #f8f9fa;
+      --dark: #343a40;
+    }
+
+    body {
+      background-color: #f5f7fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .navbar {
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      letter-spacing: 0.5px;
     }
 
     .hero-section {
@@ -27,14 +47,54 @@
       position: relative;
       overflow: hidden;
       text-align: center;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,224C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+      background-size: cover;
+      background-position: bottom;
     }
 
     .hero-section h1 {
       font-size: 2.8rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+      position: relative;
     }
     
     .hero-section p {
       font-size: 1.25rem;
+      opacity: 0.9;
+      position: relative;
+    }
+
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 50px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    .section-title.text-center::after {
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .info-card {
@@ -43,6 +103,19 @@
       background: white;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       transition: transform 0.3s, box-shadow 0.3s;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .info-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
     }
 
     .info-card:hover {
@@ -54,11 +127,19 @@
       font-size: 2.5rem;
       font-weight: bold;
       color: var(--accent);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+    }
+
+    .info-card:hover .emergency-number {
+      color: var(--accent-light);
+      transform: scale(1.05);
     }
 
     .contact-item {
       position: relative;
       padding-left: 2.5rem;
+      margin-bottom: 0.8rem;
     }
 
     .contact-item::before {
@@ -69,42 +150,125 @@
       color: var(--primary);
     }
 
+    .feature-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+    }
+
+    .footer {
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+      color: white;
+      padding: 2rem 0;
+      margin-top: 3rem;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transition: all 0.3s;
+      z-index: 1000;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+    }
+
+    .back-to-top:hover {
+      background: var(--accent-light);
+      transform: translateY(-3px);
+    }
+
     @media (max-width: 768px) {
       .hero-section {
         padding: 2rem 1rem;
         border-radius: 15px;
       }
       
-      .display-3 {
-        font-size: 2.5rem;
+      .hero-section h1 {
+        font-size: 2.2rem;
       }
       
       .emergency-number {
         font-size: 2rem;
       }
+      
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+      }
     }
   </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <i class="fas fa-school me-2"></i>Plan Escuela Segura
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Protocolos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Recursos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
   <main class="container my-4 flex-grow-1">
     <!-- Hero Section -->
     <section class="hero-section">
       <h1 class="display-3 fw-bold mb-4">
         <i class="fas fa-school"></i> Información de Emergencia para Escuelas
       </h1>
-      <p class="lead mb-4 opacity-75">
+      <p class="lead mb-4">
         Recursos y contactos importantes para instituciones educativas en Chile
       </p>
+      <button class="btn btn-light btn-lg px-4 py-2 mt-2 fw-bold">
+        <i class="fas fa-download me-2"></i>Descargar Protocolos
+      </button>
     </section>
 
     <!-- Números de Emergencia -->
-    <section id="emergencia" class="my-5">
-      <h2 class="text-center mb-4">Números de Emergencia</h2>
+    <section id="emergencia" class="my-5 py-4">
+      <h2 class="text-center mb-4 section-title">Números de Emergencia</h2>
       <div class="row g-4">
         <div class="col-md-6 col-lg-3">
           <div class="info-card text-center p-4 h-100">
-            <div class="text-danger mb-3">
-              <i class="fas fa-fire-extinguisher fa-3x"></i>
+            <div class="feature-icon">
+              <i class="fas fa-fire-extinguisher fa-2x text-white"></i>
             </div>
             <h3>Bomberos</h3>
             <p class="emergency-number">132</p>
@@ -113,8 +277,8 @@
         </div>
         <div class="col-md-6 col-lg-3">
           <div class="info-card text-center p-4 h-100">
-            <div class="text-primary mb-3">
-              <i class="fas fa-ambulance fa-3x"></i>
+            <div class="feature-icon">
+              <i class="fas fa-ambulance fa-2x text-white"></i>
             </div>
             <h3>Ambulancias</h3>
             <p class="emergency-number">131</p>
@@ -123,16 +287,136 @@
         </div>
         <div class="col-md-6 col-lg-3">
           <div class="info-card text-center p-4 h-100">
-            <div class="text-success mb-3">
-              <i class="fas fa-shield-alt fa-3x"></i>
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt fa-2x text-white"></i>
             </div>
             <h3>Carabineros</h3>
             <p class="emergency-number">133</p>
             <p class="text-muted">Seguridad y orden público</p>
           </div>
         </div>
-      
+        <div class="col-md-6 col-lg-3">
+          <div class="info-card text-center p-4 h-100">
+            <div class="feature-icon">
+              <i class="fas fa-phone-alt fa-2x text-white"></i>
+            </div>
+            <h3>Emergencias</h3>
+            <p class="emergency-number">133</p>
+            <p class="text-muted">Número único de emergencias</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Información de Contacto -->
+    <section id="contactos" class="my-5 py-4">
+      <div class="row">
+        <div class="col-lg-6">
+          <h2 class="mb-4 section-title">Contactos Importantes</h2>
+          <div class="bg-white p-4 rounded shadow-sm">
+            <ul class="list-unstyled">
+              <li class="contact-item">Ministerio de Educación: <strong>600 600 2626</strong></li>
+              <li class="contact-item">Superintendencia de Educación: <strong>600 3600 390</strong></li>
+              <li class="contact-item">Agencia de Calidad de la Educación: <strong>2 2676 8600</strong></li>
+              <li class="contact-item">Junta Nacional de Escolaridad y Becas: <strong>600 642 0000</strong></li>
+              <li class="contact-item">Integra: <strong>800 540 544</strong></li>
+              <li class="contact-item">Junaeb: <strong>800 834 300</strong></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <h2 class="mb-4 section-title">Recursos Adicionales</h2>
+          <div class="bg-white p-4 rounded shadow-sm h-100">
+            <div class="d-flex align-items-center mb-3">
+              <div class="bg-primary rounded-circle p-3 me-3">
+                <i class="fas fa-file-pdf fa-2x text-white"></i>
+              </div>
+              <div>
+                <h5 class="mb-0">Protocolo de Emergencias Escolares</h5>
+                <p class="mb-0 text-muted">Documento oficial del MINEDUC</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+              <div class="bg-success rounded-circle p-3 me-3">
+                <i class="fas fa-video fa-2x text-white"></i>
+              </div>
+              <div>
+                <h5 class="mb-0">Videos de Capacitación</h5>
+                <p class="mb-0 text-muted">Material de preparación ante emergencias</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-center">
+              <div class="bg-warning rounded-circle p-3 me-3">
+                <i class="fas fa-map-marked-alt fa-2x text-white"></i>
+              </div>
+              <div>
+                <h5 class="mb-0">Mapas de Zonas Seguras</h5>
+                <p class="mb-0 text-muted">Identificación de áreas seguras en establecimientos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5>Información de Emergencia para Escuelas</h5>
+          <p>Recursos oficiales del Ministerio de Educación de Chile</p>
+        </div>
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5>Enlaces Rápidos</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Política de Privacidad</a></li>
+            <li><a href="#" class="text-white">Términos de Uso</a></li>
+            <li><a href="#" class="text-white">Mapa del Sitio</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Contacto</h5>
+          <p>emergencia.escolar@mineduc.cl</p>
+          <div class="d-flex justify-content-center">
+            <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-2x"></i></a>
+            <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-instagram fa-2x"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="my-4 bg-light">
+      <p>&copy; 2023 Ministerio de Educación de Chile. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <a href="#" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Back to top button
+    const backToTopButton = document.querySelector(".back-to-top");
+    
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add("show");
+      } else {
+        backToTopButton.classList.remove("show");
+      }
+    });
+    
+    backToTopButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
