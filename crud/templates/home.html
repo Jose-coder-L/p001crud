@@ -7,18 +7,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Obesidad: Prevención y Consecuencias | Salud Integral</title>
+  <title>Prevención de Incendios en Escuelas | Protección Civil</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     :root {
-      --medical-primary: #2A5C82;
-      --medical-secondary: #4A90E2;
-      --medical-accent: #FF6B6B;
-      --medical-success: #88C057;
+      --fire-primary: #e74c3c;
+      --fire-secondary: #f39c12;
+      --fire-accent: #c0392b;
+      --fire-success: #27ae60;
     }
 
     .hero-section {
-      background: linear-gradient(135deg, var(--medical-primary) 0%, var(--medical-secondary) 100%);
+      background: linear-gradient(135deg, var(--fire-primary) 0%, var(--fire-secondary) 100%);
       border-radius: 20px;
       color: white;
       padding: 4rem 2rem;
@@ -36,7 +36,7 @@
       font-size: 1.25rem;
     }
 
-    .medical-card {
+    .fire-card {
       border: none;
       border-radius: 15px;
       background: white;
@@ -44,7 +44,7 @@
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .medical-card:hover {
+    .fire-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 15px 40px rgba(0,0,0,0.12);
     }
@@ -55,17 +55,37 @@
     }
 
     .risk-factor::before {
-      content: "⚠";
+      content: "🔥";
       position: absolute;
       left: 0;
-      color: var(--medical-accent);
       font-size: 1.2em;
     }
 
     .timeline-roadmap {
-      border-left: 3px solid var(--medical-secondary);
+      border-left: 3px solid var(--fire-secondary);
       padding-left: 2rem;
       margin-left: 1rem;
+    }
+
+    .prevention-step {
+      position: relative;
+      padding-left: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .prevention-step-number {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2.5rem;
+      height: 2.5rem;
+      background: var(--fire-primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
     }
 
     @media (max-width: 768px) {
@@ -82,13 +102,13 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
   <main class="container my-4 flex-grow-1">
-    <!-- Hero Section (sin imagen ni botones) -->
+    <!-- Hero Section -->
     <section class="hero-section">
       <h1 class="display-3 fw-bold mb-4">
-        <i class="fas fa-balance-scale-left"></i> Combatiendo la Obesidad
+        <i class="fas fa-fire-extinguisher"></i> Prevención de Incendios en Escuelas
       </h1>
       <p class="lead mb-4 opacity-75">
-        Estrategias basadas en evidencia científica - Datos actualizados OMS 2023
+        Protegiendo a nuestros estudiantes - Guía completa para instituciones educativas
       </p>
     </section>
 
@@ -96,43 +116,43 @@
     <section id="estadisticas" class="my-5">
       <div class="row g-4">
         <div class="col-md-6 col-lg-3">
-          <div class="medical-card text-center p-4">
+          <div class="fire-card text-center p-4">
             <div class="text-primary mb-3">
-              <i class="fas fa-weight fa-3x"></i>
+              <i class="fas fa-fire fa-3x"></i>
             </div>
-            <h3 class="h2 fw-bold">39%</h3>
-            <p class="mb-0">Adultos con sobrepeso</p>
-            <small class="text-muted">(OMS 2023)</small>
+            <h3 class="h2 fw-bold">68%</h3>
+            <p class="mb-0">Incendios escolares prevenibles</p>
+            <small class="text-muted">(NFPA 2023)</small>
           </div>
         </div>
         <div class="col-md-6 col-lg-3">
-          <div class="medical-card text-center p-4">
+          <div class="fire-card text-center p-4">
             <div class="text-danger mb-3">
-              <i class="fas fa-running fa-3x"></i>
+              <i class="fas fa-clock fa-3x"></i>
             </div>
-            <h3 class="h2 fw-bold">+58%</h3>
-            <p class="mb-0">Reducción riesgo diabetes</p>
-            <small class="text-muted">(NEJM 2022)</small>
+            <h3 class="h2 fw-bold">< 2 min</h3>
+            <p class="mb-0">Tiempo de evacuación ideal</p>
+            <small class="text-muted">(Protección Civil)</small>
           </div>
         </div>
         <div class="col-md-6 col-lg-3">
-          <div class="medical-card text-center p-4">
+          <div class="fire-card text-center p-4">
             <div class="text-success mb-3">
-              <i class="fas fa-apple-alt fa-3x"></i>
+              <i class="fas fa-check-circle fa-3x"></i>
             </div>
-            <h3 class="h2 fw-bold">83%</h3>
-            <p class="mb-0">Casos prevenibles</p>
-            <small class="text-muted">(The Lancet 2023)</small>
+            <h3 class="h2 fw-bold">92%</h3>
+            <p class="mb-0">Efectividad de simulacros</p>
+            <small class="text-muted">(UNESCO 2023)</small>
           </div>
         </div>
         <div class="col-md-6 col-lg-3">
-          <div class="medical-card text-center p-4">
+          <div class="fire-card text-center p-4">
             <div class="text-warning mb-3">
-              <i class="fas fa-child fa-3x"></i>
+              <i class="fas fa-exclamation-triangle fa-3x"></i>
             </div>
-            <h3 class="h2 fw-bold">1:5</h3>
-            <p class="mb-0">Niños con obesidad</p>
-            <small class="text-muted">(UNICEF 2023)</small>
+            <h3 class="h2 fw-bold">1:3</h3>
+            <p class="mb-0">Escuelas sin protocolos actualizados</p>
+            <small class="text-muted">(OMS 2023)</small>
           </div>
         </div>
       </div>
@@ -142,74 +162,141 @@
     <section id="prevencion" class="my-5">
       <div class="row g-4">
         <div class="col-lg-6">
-          <div class="medical-card p-4 h-100">
+          <div class="fire-card p-4 h-100">
             <h3 class="text-success mb-4">
-              <i class="fas fa-shield-alt me-2"></i> Estrategias Efectivas
+              <i class="fas fa-shield-alt me-2"></i> Medidas Preventivas
             </h3>
-            <div class="timeline-roadmap">
-              <div class="mb-4 position-relative">
-                <div class="timeline-badge bg-success"></div>
-                <h5>Nutrición Balanceada</h5>
-                <p class="text-muted">Dieta mediterránea reduce 33% riesgo obesidad (Estudio PREDIMED)</p>
-              </div>
-              <div class="mb-4 position-relative">
-                <div class="timeline-badge bg-primary"></div>
-                <h5>Actividad Física</h5>
-                <p class="text-muted">150 min/semana disminuyen IMC en 1.2 kg/m² (CDC 2023)</p>
-              </div>
-              <div class="position-relative">
-                <div class="timeline-badge bg-warning"></div>
-                <h5>Sueño Reparador</h5>
-                <p class="text-muted">7-9 horas reducen apetito en 25% (Sleep Medicine 2022)</p>
-              </div>
+            <div class="prevention-step">
+              <div class="prevention-step-number">1</div>
+              <h5>Instalaciones Eléctricas Seguras</h5>
+              <p class="text-muted">Revisión trimestral de instalaciones y prohibición de sobrecargar enchufes</p>
+            </div>
+            <div class="prevention-step">
+              <div class="prevention-step-number">2</div>
+              <h5>Simulacros Periódicos</h5>
+              <p class="text-muted">Realizar al menos 2 simulacros por semestre con toda la comunidad educativa</p>
+            </div>
+            <div class="prevention-step">
+              <div class="prevention-step-number">3</div>
+              <h5>Señalización Clara</h5>
+              <p class="text-muted">Instalar señales fotoluminiscentes de rutas de evacuación y puntos de reunión</p>
             </div>
           </div>
         </div>
         
         <div class="col-lg-6">
-          <div class="medical-card p-4 h-100">
+          <div class="fire-card p-4 h-100">
             <h3 class="text-danger mb-4">
-              <i class="fas fa-exclamation-triangle me-2"></i> Riesgos Asociados
+              <i class="fas fa-exclamation-triangle me-2"></i> Riesgos Principales
             </h3>
             <ul class="list-unstyled">
               <li class="risk-factor mb-3">
-                <strong>Enfermedad Cardiovascular:</strong> 68% mayor riesgo (AHA 2023)
+                <strong>Cortocircuitos:</strong> 45% de incendios en escuelas son por fallas eléctricas
               </li>
               <li class="risk-factor mb-3">
-                <strong>Diabetes Tipo 2:</strong> 80% casos relacionados (IDF 2023)
+                <strong>Materiales inflamables:</strong> Productos de limpieza y laboratorio mal almacenados
+              </li>
+              <li class="risk-factor mb-3">
+                <strong>Obstrucción de salidas:</strong> 28% de las escuelas tienen rutas bloqueadas
               </li>
               <li class="risk-factor">
-                <strong>Problemas Articulares:</strong> 4x más osteoartritis (Arthritis Foundation)
+                <strong>Falta de equipos:</strong> Extintores vencidos o inexistentes en 35% de aulas
               </li>
             </ul>
             <div class="alert alert-danger mt-4">
-              <i class="fas fa-brain me-2"></i> La obesidad reduce volumen cerebral en 0.3% anual (Neurology 2023)
+              <i class="fas fa-fire-extinguisher me-2"></i> Solo 40% del personal escolar sabe usar extintores correctamente
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Plan de Acción sin imagen de progreso -->
+    <!-- Plan de Acción -->
     <section class="my-5">
-      <div class="medical-card p-4">
+      <div class="fire-card p-4">
         <div class="row">
           <div class="col-12 text-center">
             <h3 class="text-primary mb-4">
-              <i class="fas fa-road me-2"></i> Plan de 12 Semanas
+              <i class="fas fa-road me-2"></i> Plan de Evacuación en 5 Pasos
             </h3>
-            <ul class="list-group list-group-flush fs-5">
-              <li class="list-group-item">
-                <i class="fas fa-check-circle text-success me-2"></i>
-                Evaluación médica inicial
+            <div class="row mt-4">
+              <div class="col-md-4 mb-3">
+                <div class="prevention-step">
+                  <div class="prevention-step-number">1</div>
+                  <h5>Detectar</h5>
+                  <p>Identificar el incendio y activar la alarma</p>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div class="prevention-step">
+                  <div class="prevention-step-number">2</div>
+                  <h5>Alertar</h5>
+                  <p>Notificar a bomberos y autoridades</p>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div class="prevention-step">
+                  <div class="prevention-step-number">3</div>
+                  <h5>Evacuar</h5>
+                  <p>Salir en orden al punto de reunión</p>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="prevention-step">
+                  <div class="prevention-step-number">4</div>
+                  <h5>Revisar</h5>
+                  <p>Contar a todos en el punto de encuentro</p>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="prevention-step">
+                  <div class="prevention-step-number">5</div>
+                  <h5>Informar</h5>
+                  <p>Reportar a bomberos sobre personas faltantes</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipos de Protección -->
+    <section class="my-5">
+      <div class="fire-card p-4">
+        <h3 class="text-center text-primary mb-4">
+          <i class="fas fa-toolbox me-2"></i> Equipos Esenciales para Escuelas
+        </h3>
+        <div class="row">
+          <div class="col-md-6">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Extintores tipo ABC (1 por cada 200 m²)
+                <span class="badge bg-primary rounded-pill">Requerido</span>
               </li>
-              <li class="list-group-item">
-                <i class="fas fa-check-circle text-success me-2"></i>
-                Plan nutricional personalizado
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Sistemas de alarma audibles y visibles
+                <span class="badge bg-primary rounded-pill">Requerido</span>
               </li>
-              <li class="list-group-item">
-                <i class="fas fa-check-circle text-success me-2"></i>
-                Monitoreo de progreso semanal
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Botiquines de primeros auxilios
+                <span class="badge bg-primary rounded-pill">Requerido</span>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Señalización fotoluminiscente
+                <span class="badge bg-success rounded-pill">Recomendado</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Sistemas de rociadores automáticos
+                <span class="badge bg-success rounded-pill">Recomendado</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Mantas ignífugas
+                <span class="badge bg-success rounded-pill">Recomendado</span>
               </li>
             </ul>
           </div>
@@ -220,7 +307,6 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://kit.fontawesome.com/your-actual-kit.js" crossorigin="anonymous"></script>
 </body>
 </html>
 {% endblock %}
